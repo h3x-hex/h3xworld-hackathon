@@ -670,7 +670,7 @@ export default function CreatePost() {
             type="number"
             className="input input-bordered w-full bg-transparent border-2 border-stone-600 focus:border-yellow-500 rounded-lg text-white"
             placeholder="Collect Limit "
-            onChange={(e) => setPostNFTDetails(prev => ({ ...prev, collectLimit: e.target.value }))}
+            onChange={(e) => setPostNFTDetails(prev => ({ ...prev, collectLimit: Number(e.target.value) }))}
             value={postNFTDetails.collectLimit}
           />
         </fieldset>
