@@ -1,0 +1,49 @@
+{
+  "name": "h3xworld",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@headlessui/react": "^2.2.3",
+    "@heroicons/react": "^2.2.0",
+    "@lens-chain/sdk": "^1.0.3",
+    "@lens-chain/storage-client": "^1.0.4",
+    "@lens-protocol/client": "^0.0.0-canary-20250430134539",
+    "@lens-protocol/metadata": "^2.0.0",
+    "@prisma/client": "^6.8.2",
+    "@tanstack/react-query": "^5.76.1",
+    "connectkit": "^1.9.0",
+    "ethers": "^6.14.1",
+    "firebase": "^11.7.3",
+    "framer-motion": "^12.12.1",
+    "jotai": "^2.12.4",
+    "moment": "^2.30.1",
+    "next": "15.3.2",
+    "postcss": "^8.5.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-easy-crop": "^5.4.1",
+    "react-intersection-observer": "^9.16.0",
+    "react-responsive": "^10.0.1",
+    "react-responsive-carousel": "^3.2.23",
+    "react-simple-typewriter": "^5.0.1",
+    "tailwindcss-animate": "^1.0.7",
+    "viem": "^2.29.4",
+    "wagmi": "^2.15.3",
+    "zksync-ethers": "^6.17.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.7",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "daisyui": "^5.0.35",
+    "tailwindcss": "^4.1.7",
+    "typescript": "^5"
+  }
+}
