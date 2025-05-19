@@ -1,8 +1,8 @@
 "use client"
 
 import React, { useEffect, useState } from 'react';
-import { fetchPostsForYou } from '@lens-protocol/client/actions';
-import { evmAddress, Post, PostForYou } from '@lens-protocol/client';
+import { fetchTimelineHighlights } from '@lens-protocol/client/actions';
+import { AnyPost, evmAddress, Post, PostForYou } from '@lens-protocol/client';
 import { client } from '@/helper/lensClient';
 import { userAtom } from '@/store/authState';
 import { useAtom } from 'jotai';
@@ -37,7 +37,7 @@ const HomeFeed = () => {
       setIsLoading(true);
       setError(null);
 
-      /*const result = await fetchTimelineHighlights(sessionClient, {
+      const result = await fetchTimelineHighlights(sessionClient, {
         account: evmAddress(user.accountAddress!),
         filter: {
             feeds: [
@@ -46,11 +46,11 @@ const HomeFeed = () => {
               },
             ],
         },
-      });*/
-
-      const result = await fetchPostsForYou(client, {
-        account: evmAddress(user.accountAddress!)
       });
+
+      /*const result = await fetchPostsForYou(client, {
+        account: evmAddress(user.accountAddress!)
+      });*/
 
       if (result.isErr()) {
         setError('Failed to load posts.');
@@ -59,7 +59,8 @@ const HomeFeed = () => {
       }
 
       const { items } = result.value;
-      const posts = items.filter((item: PostForYou) => item.__typename === 'PostForYou' && item.post?.__typename === 'Post').map((item: PostForYou) => item.post);
+      //const posts = items.filter((item: PostForYou) => item.__typename === 'PostForYou' && item.post?.__typename === 'Post').map((item: PostForYou) => item.post);
+      const posts = items.filter((item: AnyPost) => item.__typename === 'Post');
       console.log(posts)
       setPosts(posts);
       setIsLoading(false);
